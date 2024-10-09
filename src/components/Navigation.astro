@@ -1,0 +1,60 @@
+---
+import Eyes from "./Eyes.astro";
+---
+
+<div class="fixed top-0 noisy w-screen z-50">
+  <nav class="flex justify-between items-center max-w-screen-lg mx-auto px-6">
+    <div class="flex items-center gap-4">
+      <Eyes />
+      <span class="text-2xl font-bold display text-tea_rose-900">Show Me</span>
+    </div>
+    <ul class="flex gap-4">
+      <li class="pl-4">
+        <a href="/"> Accueil </a>
+      </li>
+      <li class="pl-4">
+        <a href="/"> FAQ </a>
+      </li>
+      <li class="pl-4">
+        <a href="/"> Tarifs </a>
+      </li>
+      <li class="pl-4">
+        <a href="/"> Contact </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<style is:global>
+  .glass {
+    backdrop-filter: blur(9px) saturate(104%);
+    -webkit-backdrop-filter: blur(9px) saturate(104%);
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+
+  nav {
+    &::before {
+      content: "";
+      z-index: -1;
+      position: absolute;
+      height: 35px;
+      width: 100%;
+      top: 100%;
+      left: 0;
+      background-image: url("/public/bluehalftonenoise.png");
+      background-repeat: repeat;
+      background-size: 75px;
+      filter: brightness(105%);
+    }
+    &::after {
+      content: "";
+      background-color: #3d0eaf;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+  }
+</style>

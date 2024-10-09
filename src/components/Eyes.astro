@@ -1,14 +1,8 @@
 ---
-interface Props {
-  title: string;
-  body: string;
-  href: string;
-}
 
-const { href, title, body } = Astro.props;
 ---
 
-<div>
+<div class="drop-shadow-lg">
   <svg
     width="500"
     height="500"
@@ -405,10 +399,13 @@ const { href, title, body } = Astro.props;
   div {
     position: relative;
 
-    height: 100px;
+    height: 80px;
+    width: 80px;
 
     > svg {
-      height: 100px;
+      height: 80px;
+      width: 80px;
+      top: -7px;
       position: absolute;
       transform: scaleX(-1);
     }
@@ -429,15 +426,14 @@ const { href, title, body } = Astro.props;
 
   const moveEyes = (e) => {
     var rectLeft = pupilLeft.getBoundingClientRect();
-    var x = Math.max(-15, Math.min(4, (e.pageX - rectLeft.right) / 20)) + "px";
-    var y = Math.min(10, (e.pageY - rectLeft.top) / 30) + "px";
+    var x = Math.max(-13, Math.min(3, (e.pageX - rectLeft.right) / 20)) + "px";
+    var y = Math.min(8, (e.pageY - rectLeft.top) / 30) + "px";
     pupilLeft.style.transform =
       "translate3d(" + x + "," + y + ", 0px) scaleX(-1)";
     var rectRight = pupilRight.getBoundingClientRect();
 
-    var x =
-      Math.max(-22, Math.min(3.75, (e.pageX - rectRight.right) / 20)) + "px";
-    var y = Math.min(10, (e.pageY - rectRight.top) / 30) + "px";
+    var x = Math.max(-20, Math.min(3, (e.pageX - rectRight.right) / 20)) + "px";
+    var y = Math.min(8, (e.pageY - rectRight.top) / 30) + "px";
     pupilRight.style.transform =
       "translate3d(" + x + "," + y + ", 0px) scaleX(-1)";
   };

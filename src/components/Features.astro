@@ -1,0 +1,50 @@
+---
+import FeatureCard from "./FeatureCard.astro";
+---
+
+<section class="max-w-screen-lg mx-auto p-6 gap-10 bg-flame noisy">
+  <header class="text-center">
+    <h2 class="uppercase display text-feldgrau-400 font-bold">
+      Ce que nous offrons
+    </h2>
+    <p class="text-4xl font-bold display text-feldgrau-200">
+      Ne vous préoccupez plus jamais votre site web
+    </p>
+    <p>
+      Chez Show me, nous sommes spécialisés dans la conception et le
+      développement de sites web pour les petites entreprises françaises. Chaque
+      ligne de code est écrite manuellement pour garantir les meilleures
+      performances et satisfaire Google, ce qui permet d'attirer plus de clients
+      sur votre site et d'augmenter les revenus de votre entreprise. Nous gérons
+      également les modifications pour vous et ne vous abandonnerons jamais.
+      Notre objectif est de créer des relations sur le long terme avec nos
+      clients et de les voir se développer au fil du temps.
+    </p>
+  </header>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+    <FeatureCard
+      title="Personnalisation"
+      body="Nous vous proposons un site web personnalisé à votre image, avec des couleurs et des images personnalisées. Vous pouvez choisir votre propre logo, vos propres images et couleurs pour votre site web."
+      href="/"
+      icon="solar:tuning-3-line-duotone"
+    />
+    <FeatureCard
+      title="Performances"
+      body="Nous avons conçu notre site web avec les meilleures performances pour les petites entreprises. Nous avons également mis en place des outils de optimisation pour garantir une expérience utilisateur optimale."
+      href="/"
+      icon="solar:bolt-line-duotone"
+    />
+    <FeatureCard
+      title="Code personnalisé"
+      body="Nous avons écrit le code de votre site web à la main, avec des fonctionnalités personnalisées pour vous aider à créer un site web unique. Nous avons également mis en place des outils de développement pour vous aider à créer un site web de qualité."
+      href="/"
+      icon="solar:code-2-bold-duotone"
+    />
+    <FeatureCard
+      title="Support"
+      body="Nous sommes là pour vous aider à créer un site web de qualité. Nous avons mis en place des outils de développement pour vous aider à créer un site web de qualité. Nous avons également mis en place des outils de développement pour vous aider à créer un site web de qualité."
+      href="/"
+      icon="solar:user-hand-up-bold-duotone"
+    />
+  </div>
+</section>

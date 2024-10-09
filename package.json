@@ -11,12 +11,17 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
+    "@astrojs/tailwind": "^5.1.1",
+    "@iconify-json/solar": "^1.2.0",
     "astro": "^4.15.12",
+    "astro-icon": "^1.1.1",
+    "tailwindcss": "^3.4.13",
     "typescript": "^5.6.2"
   },
   "packageManager": "yarn@4.5.0",
   "devDependencies": {
     "prettier": "^3.3.3",
-    "prettier-plugin-astro": "^0.14.1"
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.6.8"
   }
 }
