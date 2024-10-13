@@ -1,0 +1,64 @@
+---
+import { Image } from "astro:assets";
+import Gradiend from "/src/images/Gradient Hero.png";
+---
+
+<div
+  class="main-container relative py-8 z-0 bg-princeton_orange-600 flex flex-col items-center justify-center"
+>
+  <div class="noisy">
+    <div class="max-w-screen-lg">
+      <slot />
+    </div>
+  </div>
+</div>
+
+<style>
+  .main-container {
+    background: radial-gradient(
+        closest-side at 30% 74%,
+        rgba(255, 172, 55, 0.5) 0%,
+        #ffac3800 100%
+      ),
+      radial-gradient(
+        closest-side at 66% 30%,
+        rgba(255, 172, 55, 0.5) 0%,
+        #0000ff00 100%
+      ),
+      linear-gradient(
+        to top,
+        rgba(255, 172, 55, 0.5) 0%,
+        rgba(255, 151, 5, 0.5) 14%,
+        rgba(237, 111, 33, 0.5) 63%,
+        rgba(255, 172, 55, 0.5) 100%
+      );
+
+    &::before,
+    &::after {
+      content: "";
+      width: 100%;
+      height: 60px;
+      position: absolute;
+      background-image: url(/public/separateur.png);
+      background-repeat: repeat;
+      background-size: 310px;
+      opacity: 0.5;
+      z-index: -1;
+    }
+
+    &::before {
+      top: -60px;
+      left: 0;
+    }
+
+    &::after {
+      bottom: -60px;
+      right: 0;
+      transform: rotate(180deg);
+    }
+  }
+
+  .noisy::after {
+    filter: brightness(0.76);
+  }
+</style>

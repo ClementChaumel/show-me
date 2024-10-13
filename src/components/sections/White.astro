@@ -1,0 +1,21 @@
+---
+import { Image } from "astro:assets";
+import GradGlow from "/src/images/grad-glow.png";
+---
+
+<div class="relative z-0 noisy flex flex-col items-center justify-center">
+  <Image src={GradGlow} alt="" class="" />
+  <div class="max-w-screen-lg">
+    <slot />
+  </div>
+</div>
+
+<style>
+  img {
+    position: absolute;
+    max-width: 100vw;
+    z-index: -10;
+    height: 100%;
+    width: 100%;
+  }
+</style>

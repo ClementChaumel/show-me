@@ -1,0 +1,42 @@
+---
+import { Image } from "astro:assets";
+import bouboule from "/src/images/bouboule.png";
+import formes from "/src/images/formes.png";
+import triangle from "/src/images/triangle.png";
+import rond from "/src/images/rond.png";
+---
+
+<div class="relative min-h-[75vh] pb-[150px]">
+  <Image src={formes} alt="" class="formes" />
+  <Image src={rond} alt="" class="circle" />
+  <Image src={triangle} alt="" class="triangle" />
+  <div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8 relative z-10">
+    <slot />
+  </div>
+</div>
+
+<style>
+  img {
+    position: absolute;
+    user-select: none;
+    pointer-events: none;
+  }
+  .circle {
+    top: 70%;
+    width: 490px;
+    right: 20%;
+    transform: rotate(-15deg);
+  }
+  .triangle {
+    top: 100px;
+    left: -20%;
+    transform: rotate(15deg);
+    width: 1000px;
+  }
+  .formes {
+    top: -100px;
+    left: 50%;
+    transform: rotate(45deg);
+    width: 850px;
+  }
+</style>

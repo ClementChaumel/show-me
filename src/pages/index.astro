@@ -5,12 +5,29 @@ import Navigation from "../components/Navigation.astro";
 import Hero from "../components/Hero.astro";
 import Features from "../components/Features.astro";
 import Features2 from "../components/Features2.astro";
+import Shapes from "../components/sections/Shapes.astro";
+import Gradient from "../components/sections/Gradient.astro";
+import SolidColor from "../components/sections/SolidColor.astro";
+import Numbers from "../components/Numbers.astro";
+import Numbers2 from "../components/Numbers2.astro";
+import White from "../components/sections/White.astro";
+import Speed from "../components/Speed.astro";
 ---
 
 <Layout title="Welcome to Astro.">
   <div class="bg-tea_rose-900 min-h-screen noisy">
     <Navigation />
-    <Hero />
-    <Features2 />
+    <Gradient>
+      <Hero />
+    </Gradient>
+    <Shapes>
+      <Features2 />
+    </Shapes>
+    <SolidColor>
+      <Speed />
+    </SolidColor>
+    <White>
+      <Numbers2 />
+    </White>
   </div>
 </Layout>

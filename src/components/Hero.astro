@@ -1,52 +1,29 @@
 ---
 import { Image } from "astro:assets";
 import pc from "../pc.png";
-import Gradiend from "../images/Gradient Hero.png";
 ---
 
-<div class="relative -top-4 z-0 gradientend bg-dark_blue mt-24 h-screen">
-  <Image
-    src={Gradiend}
-    alt=""
-    class="absolute -z-10 h-full max-h-[1050px] bottom-0"
-  />
-  <div
-    class="max-w-screen-lg mx-auto p-6 pt-36 grid grid-cols-1 lg:grid-cols-2 gap-10"
-  >
-    <header class="text-tea_rose-900 text-pretty display lg:text-left">
-      <h2 class="text-xl font-bold uppercase mb-2 felix">
-        Design personalisé, codé à la main
-      </h2>
-      <h1 class="text-5xl font-bold mb-6">
-        Webmaster pour petites entreprises
-      </h1>
-      <p class="mb-10">
-        Pas de créateur de site ni de Wordpress. Nous proposons un site web
-        personalisé, plus performant, 100% codé à la main à partir de 150 par
-        mois.
-      </p>
-      <div class="flex gap-6 items-center">
-        <a href="/" class="bg-flame-500 p-4 rounded-full text-white"
-          >En savoir plus</a
-        >
-        <a href="/">Contactez-nous</a>
-      </div>
-    </header>
-    <Image src={pc} alt="" />
-  </div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+  <header class="text-tea_rose-900 text-pretty lg:text-left">
+    <h2
+      class="text-center text-base/7 font-semibold display text-princeton_orange"
+    >
+      Design personalisé, codé à la main
+    </h2>
+    <h1 class="text-5xl display font-bold mb-6">
+      Webmaster pour petites entreprises
+    </h1>
+    <p class="mb-10">
+      Pas de créateur de site ni de Wordpress. Nous proposons un site web
+      personalisé, plus performant, 100% codé à la main à partir de 150 par
+      mois.
+    </p>
+    <div class="flex gap-6 items-center">
+      <a href="/" class="bg-flame-500 p-4 rounded-full text-white"
+        >En savoir plus</a
+      >
+      <a href="/">Contactez-nous</a>
+    </div>
+  </header>
+  <Image src={pc} alt="" />
 </div>
-
-<style>
-  .gradientend::after {
-    content: "";
-    z-index: -1;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    background-image: url(/public/noise.png);
-    background-repeat: repeat;
-    background-size: 210px;
-  }
-</style>

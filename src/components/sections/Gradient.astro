@@ -1,0 +1,36 @@
+---
+import { Image } from "astro:assets";
+import Gradiend from "/src/images/Gradient Hero.png";
+---
+
+<div
+  class="relative z-0 gradientend bg-dark_blue h-[75vh] flex flex-col items-center justify-center"
+>
+  <Image src={Gradiend} alt="" class="" />
+  <div class="max-w-screen-lg">
+    <slot />
+  </div>
+</div>
+
+<style>
+  .gradientend::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background-image: url(/public/noise.png);
+    background-repeat: repeat;
+    background-size: 210px;
+  }
+
+  img {
+    position: absolute;
+    max-width: 100vw;
+    z-index: -10;
+    height: 100%;
+    bottom: -150px;
+  }
+</style>

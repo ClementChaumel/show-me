@@ -1,0 +1,95 @@
+---
+
+---
+
+<div class="py-24 sm:py-32">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <dl class="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
+      <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+        <dt class="text-base leading-7 text-gray-600">Codé à la main</dt>
+        <dd
+          class="order-first display text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl"
+        >
+          <span id="handcoded">100</span>%
+        </dd>
+      </div>
+      <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+        <dt class="text-base leading-7 text-gray-600">disponible pour vous</dt>
+        <dd
+          class="order-first display text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl"
+        >
+          24/7
+        </dd>
+      </div>
+      <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+        <dt class="text-base leading-7 text-gray-600">
+          Scores parfaits sur les métriques Google
+        </dt>
+        <dd
+          class="order-first display text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl"
+        >
+          <span id="googlescore">100</span>/100
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
+
+<script>
+  /* Call this function with a string containing the ID name to
+   * the element containing the number you want to do a count animation on.
+   *
+   * Speed of animation (milliseconds timeout between each number increase)
+   */
+  function increaseNumberAnimation(
+    elementId: string,
+    endNumber: number,
+    speed = 10
+  ) {
+    const element = document.getElementById(elementId);
+
+    if (!element) return;
+
+    /* A dataset variable that is added to the animated element*/
+    const animationRunning = JSON.parse(
+      element.dataset.animationRunning ?? false
+    );
+
+    if (animationRunning) return;
+
+    element.dataset.animationRunning = true;
+
+    incNbrRec(0, endNumber, element, speed);
+  }
+
+  // calls the function when an element comes into view using IntersectionObserver
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        increaseNumberAnimation("handcoded", 100);
+        increaseNumberAnimation("googlescore", 100);
+      }
+    });
+  });
+
+  /*A recursive function to increase the number.*/
+  function incNbrRec(
+    currentNumber: number,
+    endNumber: number,
+    element: Element,
+    speed: number
+  ) {
+    if (currentNumber <= endNumber) {
+      element.innerHTML = `${currentNumber}`;
+      setTimeout(function () {
+        incNbrRec(currentNumber + 1, endNumber, element, speed * 1.022);
+      }, speed); //Delay a bit before calling the function again.
+    } else {
+      element.dataset.animationRunning = false;
+      observer.unobserve(element);
+    }
+  }
+
+  // observes the element with the ID "handcoded"
+  observer.observe(document.getElementById("handcoded")!);
+</script>
