@@ -7,7 +7,7 @@ interface Props {
 const { delay, duration } = Astro.props;
 ---
 
-<div class="nav flex justify-between opacity-0">
+<div class="mini-site-nav flex justify-between opacity-0 text-[6px]">
   <span class="font-semibold">★ Entreprise</span>
   <div class="flex gap-2">
     <span>A propos</span>
@@ -15,7 +15,9 @@ const { delay, duration } = Astro.props;
     <span>FAQ</span>
   </div>
 </div>
-<div class="content justify-between relative z-0 opacity-0">
+<div
+  class="mini-site-content justify-between relative z-0 opacity-0 text-[6px]"
+>
   <div class="flex flex-col gap-2 px-2 py-6">
     <span class="text-xs">Entreprise</span>
     <span>Notre super entreprise va vous permette</span>
@@ -27,7 +29,7 @@ const { delay, duration } = Astro.props;
       >
       <span class="bg-lime-600 px-2 py-1 rounded-full">Acheter</span>
     </div>
-    <img src="https://picsum.photos/500/500" class="h-10" />
+    <img src="https://picsum.photos/500/500" class="h-10 opacity-0" />
   </div>
   <div class="about flex flex-col px-2 py-6 text-white opacity-0">
     <span class="text-xs">À propos</span>
@@ -162,15 +164,32 @@ const { delay, duration } = Astro.props;
         opacity: 1;
       }
     }
+    @keyframes appear-img {
+      0% {
+        opacity: 0;
+      }
 
-    .nav.animate {
+      99% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .mini-site-nav.animate {
       animation-name: appear-nav;
     }
-    .content.animate {
+    .mini-site-content.animate {
       animation-name: appear-content;
 
       .about {
         animation-name: appear-about;
+      }
+
+      img {
+        animation-name: appear-img;
       }
     }
 

@@ -157,19 +157,35 @@ import MiniSite from "./MiniSite.astro";
           class="mt-4 grid grid-cols-2 gap-4 sm:mt-6 sm:gap-6 lg:mt-8 lg:gap-8"
         >
           <div
-            class="mini-site aspect-h-1 aspect-w-1 overflow-hidden flex flex-col text-[6px] rounded-lg bg-tea_rose-900 max-h-[270px]"
+            class="aspect-h-1 aspect-w-1 overflow-hidden relative flex flex-col rounded-lg bg-tea_rose-900 h-[270px]"
           >
-            <MiniSite delay={0} duration={"5s"} />
+            <div
+              class="curtain h-full w-full noisy bg-dark_blue-600 absolute top-0 z-30 flex items-center justify-center p-4"
+            >
+              <p class="display text-rose-100 text-pretty text-center">
+                Nos sites faits main
+              </p>
+            </div>
+            <MiniSite delay={"1s"} duration={"0.6s"} />
           </div>
           <div
-            class="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-tea_rose-900"
+            class="aspect-h-1 aspect-w-1 overflow-hidden relative flex flex-col rounded-lg bg-tea_rose-900 h-[270px]"
           >
-            <img
-              src="https://tailwindui.com/plus/img/ecommerce-images/product-feature-09-detail-02.jpg"
-              alt="Kettle spout pouring boiling water into coffee grounds in pour-over mug."
-              class="h-full w-full object-cover object-center"
-            />
+            <div
+              class="curtain h-full w-full noisy bg-dark_blue-600 absolute top-0 z-30 flex items-center justify-center p-4"
+            >
+              <p class="display text-rose-100 text-pretty text-center">
+                Sites créés avec un générateur
+              </p>
+            </div>
+            <MiniSite delay={"3.8s"} duration={"6s"} />
           </div>
+          <button
+            id="start-comparison"
+            data-animation-direction="forwards"
+            class="bg-tea_rose-900 rounded-full py-2 px-4 text-tea_rose-100 col-span-2 justify-self-center"
+            >Démarrer la comparaison</button
+          >
         </div>
       </div>
     </div>
@@ -245,6 +261,14 @@ import MiniSite from "./MiniSite.astro";
       left: 36ch;
     }
   }
+
+  .curtain {
+    transition: transform 0.5s ease-out;
+
+    &.reveal {
+      transform: translateY(-100%);
+    }
+  }
 </style>
 
 <script>
@@ -258,4 +282,31 @@ import MiniSite from "./MiniSite.astro";
     });
   });
   observer.observe(uncover);
+
+  const startComparison = document.getElementById("start-comparison");
+  const curtains = document.querySelectorAll(".curtain");
+  const miniSiteComponents = document.querySelectorAll(
+    ".mini-site-nav, .mini-site-content"
+  );
+  startComparison?.addEventListener("click", () => {
+    if (startComparison.dataset.animationDirection === "forwards") {
+      startComparison.dataset.animationDirection = "backwards";
+      startComparison.textContent = "Recommencer la comparaison";
+      curtains.forEach((curtain) => {
+        curtain.classList.add("reveal");
+      });
+      miniSiteComponents.forEach((miniSiteComponent) => {
+        miniSiteComponent.classList.add("animate");
+      });
+    } else {
+      startComparison.dataset.animationDirection = "forwards";
+      startComparison.textContent = "Démarrer la comparaison";
+      curtains.forEach((curtain) => {
+        curtain.classList.remove("reveal");
+      });
+      miniSiteComponents.forEach((miniSiteComponent) => {
+        miniSiteComponent.classList.remove("animate");
+      });
+    }
+  });
 </script>
