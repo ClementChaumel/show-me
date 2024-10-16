@@ -1,0 +1,147 @@
+---
+import { Icon } from "astro-icon/components";
+import Button from "./Button.astro";
+---
+
+<div class="relative isolate mt-32">
+  <div class="mx-auto max-w-2xl text-center lg:max-w-4xl">
+    <h2 class="text-base font-semibold leading-7 text-indigo-600">Pricing</h2>
+    <p
+      class="mt-2 display text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl"
+    >
+      Deux façons de s'y prendre
+    </p>
+  </div>
+  <p class="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-gray-600">
+    Qui iusto aut est earum eos quae. Eligendi est at nam aliquid ad quo
+    reprehenderit in aliquid fugiat dolorum voluptatibus.
+  </p>
+  <div
+    class="mx-auto mt-16 grid max-w-lg grid-cols-1 items-center gap-y-6 sm:mt-20 sm:gap-y-0 lg:max-w-4xl lg:grid-cols-2"
+  >
+    <div
+      class="rounded-3xl rounded-t-3xl glass p-8 ring-1 ring-gray-900/10 sm:mx-8 sm:rounded-b-none sm:p-10 lg:mx-0 lg:rounded-bl-3xl lg:rounded-tr-none shadow-medium"
+    >
+      <h3
+        id="tier-hobby"
+        class="text-base font-semibold leading-7 text-indigo-600"
+      >
+        Toudaincou
+      </h3>
+      <p class="mt-4 flex items-baseline gap-x-2">
+        <span class="display text-5xl font-bold tracking-tight text-gray-900"
+          >2500€</span
+        >
+        <span class="text-base text-gray-500">+ 25€/mois d'hébergement</span>
+      </p>
+      <p class="mt-6 text-base leading-7 text-gray-600">
+        The perfect plan if you&#039;re just getting started with our product.
+      </p>
+      <ul
+        role="list"
+        class="mt-8 space-y-3 text-sm leading-6 text-gray-600 sm:mt-10"
+      >
+        <li class="flex gap-x-3">
+          <Icon
+            name="solar:check-circle-bold-duotone"
+            class="size-6 text-dark_blue"
+          />
+          Design et développement
+        </li>
+        <li class="flex gap-x-3">
+          <Icon
+            name="solar:check-circle-bold-duotone"
+            class="size-6 text-dark_blue"
+          />
+          25€ par mois d'hébergement
+        </li>
+        <li class="flex gap-x-3">
+          <Icon
+            name="solar:check-circle-bold-duotone"
+            class="size-6 text-dark_blue"
+          />
+          +100€ par page après la cinquième
+        </li>
+        <li class="flex gap-x-3">
+          <Icon
+            name="solar:check-circle-bold-duotone"
+            class="size-6 text-dark_blue"
+          />
+          Abonnement modifications illimitées à 50€ par mois
+        </li>
+      </ul>
+      <div class="flex justify-center mt-8 w-full">
+        <Button href="#" appearance="primary">Nous contacter</Button>
+      </div>
+    </div>
+    <div
+      class="relative rounded-3xl z-0 bg-dark_blue noisy p-8 ring-1 ring-gray-900/10 sm:p-10 shadow-high"
+    >
+      <h3
+        id="tier-enterprise"
+        class="text-base font-semibold leading-7 text-indigo-400"
+      >
+        Abonnement
+      </h3>
+      <p class="mt-4 flex items-baseline gap-x-2">
+        <span class="display text-5xl font-bold tracking-tight text-white"
+          >150€</span
+        >
+        <span class="text-base text-gray-400"> par mois</span>
+      </p>
+      <p class="mt-6 text-base leading-7 text-gray-300">
+        Dedicated support and infrastructure for your company.
+      </p>
+      <ul
+        role="list"
+        class="mt-8 space-y-3 text-sm leading-6 text-gray-300 sm:mt-10"
+      >
+        <li class="flex gap-x-3">
+          <Icon
+            name="solar:check-circle-bold-duotone"
+            class="size-6 text-tea_rose-900"
+          />
+          Design et développement
+        </li>
+        <li class="flex gap-x-3">
+          <Icon
+            name="solar:check-circle-bold-duotone"
+            class="size-6 text-tea_rose-900"
+          />
+          Hébergement inclus
+        </li>
+        <li class="flex gap-x-3">
+          <Icon
+            name="solar:check-circle-bold-duotone"
+            class="size-6 text-tea_rose-900"
+          />
+          +100€ par page après la cinquième
+        </li>
+        <li class="flex gap-x-3">
+          <Icon
+            name="solar:check-circle-bold-duotone"
+            class="size-6 text-tea_rose-900"
+          />
+          Modifications illimitées
+        </li>
+        <li class="flex gap-x-3">
+          <Icon
+            name="solar:check-circle-bold-duotone"
+            class="size-6 text-tea_rose-900"
+          />
+          Support 24/7
+        </li>
+        <li class="flex gap-x-3">
+          <Icon
+            name="solar:check-circle-bold-duotone"
+            class="size-6 text-tea_rose-900"
+          />
+          Mises à jour à vie
+        </li>
+      </ul>
+      <div class="flex justify-center mt-8 w-full">
+        <Button href="#" appearance="outlined">Nous contacter</Button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -12,6 +12,7 @@ import Numbers from "../components/Numbers.astro";
 import Numbers2 from "../components/Numbers2.astro";
 import White from "../components/sections/White.astro";
 import Speed from "../components/Speed.astro";
+import Pricing from "../components/Pricing.astro";
 ---
 
 <Layout title="Welcome to Astro.">
@@ -23,11 +24,16 @@ import Speed from "../components/Speed.astro";
     <Shapes>
       <Features2 />
     </Shapes>
-    <SolidColor>
-      <Speed />
-    </SolidColor>
     <White>
       <Numbers2 />
+    </White>
+    <Speed />
+
+    <SolidColor>
+      <Pricing />
+    </SolidColor>
+    <White>
+      <Pricing />
     </White>
   </div>
 </Layout>
