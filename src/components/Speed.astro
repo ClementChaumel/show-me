@@ -1,4 +1,5 @@
 ---
+import Button from "./Button.astro";
 import MiniSite from "./MiniSite.astro";
 ---
 
@@ -180,11 +181,12 @@ import MiniSite from "./MiniSite.astro";
             </div>
             <MiniSite delay={"3.8s"} duration={"6s"} />
           </div>
-          <button
+
+          <Button
             id="start-comparison"
             data-animation-direction="forwards"
-            class="bg-tea_rose-900 rounded-full py-2 px-4 text-tea_rose-100 col-span-2 justify-self-center"
-            >Démarrer la comparaison</button
+            class="col-span-2 justify-self-center"
+            appearance="secondary">Démarrer la comparaison</Button
           >
         </div>
       </div>

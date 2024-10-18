@@ -2,10 +2,12 @@
 import Eyes from "./Eyes.astro";
 ---
 
-<div class="fixed top-0 w-full z-50 pt-10">
+<div
+  id="main-nav"
+  class="fixed top-0 w-full z-50 bg-dark_blue noisy pt-10 flex justify-center pb-4"
+>
   <nav
-    id="main-nav"
-    class="flex relative -z-10 justify-between items-center max-w-screen-lg mx-auto px-6 bg-dark_blue noisy"
+    class="flex z-10 justify-between items-center w-full max-w-screen-lg mx-auto px-6 h-14"
   >
     <div class="flex items-center gap-4">
       <Eyes />
@@ -14,10 +16,12 @@ import Eyes from "./Eyes.astro";
     <ul class="flex gap-4">
       <li class="pl-4"><a href="/"> Accueil </a></li>
       <li class="pl-4"><a href="/"> FAQ </a></li>
-      <li class="pl-4"><a href="/"> Tarifs </a></li>
+      <li class="pl-4"><a href="/tarifs"> Tarifs </a></li>
       <li class="pl-4"><a href="/"> Contact </a></li>
     </ul>
   </nav>
+  <div class="separator bg-dark_blue noisy"></div>
+  <div class="separator-shadow"></div>
 </div>
 
 <style>
@@ -33,45 +37,47 @@ import Eyes from "./Eyes.astro";
       background-color: #00000050;
     }
   }
-  nav {
-    top: 0;
-    transition:
-      top 0.5s ease-in-out,
-      border-radius 0.5s ease-in-out;
 
-    &::before {
-      content: "";
-      z-index: -1;
-      position: absolute;
-      width: 100%;
-      border-radius: 2rem;
-      left: 0;
-      height: 100%;
-      box-shadow: var(--shadow-elevation-medium);
-      opacity: 0;
-      transition: opacity 0.5s ease-in-out;
-    }
-
-    &::after {
-      transition: border-radius 0.5s ease-in-out;
-    }
+  .separator {
+    z-index: 1;
+    height: 40px;
+    mask: url(/wave.svg);
+    mask-size: 40px;
+    width: 100%;
+    top: calc(100% - 1px);
+    position: absolute;
   }
-  nav.sticking {
-    border-radius: 2rem;
-    top: -20px;
 
-    &::after {
-      border-radius: 2rem;
-    }
+  .separator-shadow {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    z-index: -1;
+    height: 40px;
+    background-image: url(/wave.svg);
+    background-size: 40px;
+    width: 100%;
+    top: calc(100% - 1px);
+    position: absolute;
+    filter: drop-shadow(2px 1px 2px rgba(83, 83, 83, 0.462));
+  }
 
-    &::before {
+  #main-nav {
+    transition:
+      transform 0.5s ease-in-out,
+      padding-bottom 0.5s ease-in-out;
+  }
+  #main-nav.sticking {
+    transform: translateY(-2rem);
+    padding-bottom: 0;
+
+    .separator-shadow {
       opacity: 1;
     }
   }
 </style>
 
 <script>
-  const nav = document.querySelector("nav#main-nav");
+  const nav = document.querySelector("div#main-nav");
   document.addEventListener("scroll", function () {
     if (window.scrollY >= 10) {
       nav?.classList.add("sticking");
